@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manisha Hotels - Premium Hotel Stay</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    background:#fff;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.top-header{
+    height:84px;
+    border-bottom:1px solid #e9e9e9;
+    display:flex;
+    background:#fff;
+}
+
+.header-inner{
+    width:100%;
+    display:flex;
+    align-items:stretch;
+    padding-left:5.5%;
+}
+
+.logo-box{
+    width:210px;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.logo{
+    font-size:31px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+    color:#e83e8c;
+    white-space:nowrap;
+}
+
+.header-item{
+    min-width:205px;
+    padding:0 24px;
+    border-left:1px solid #ededed;
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.header-icon{
+    width:30px;
+    text-align:center;
+    font-size:25px;
+    color:#555;
+    flex-shrink:0;
+}
+
+.header-title{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.header-subtitle{
+    font-size:13px;
+    color:#888;
+}
+
+.header-right{
+    margin-left:auto;
+    display:flex;
+}
+
+.language{
+    min-width:150px;
+    justify-content:center;
+}
+
+.login{
+    min-width:205px;
+    cursor:pointer;
+}
+
+.login-icon{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#999;
+    color:#fff;
+    display:grid;
+    place-items:center;
+}
+
+/* =========================
+   HERO / SEARCH
+========================= */
+
+.hero{
+    min-height:300px;
+    padding:78px 5% 82px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 15% 50%,rgba(255,117,177,.18),transparent 28%),
+        radial-gradient(circle at 85% 50%,rgba(232,62,140,.13),transparent 30%),
+        linear-gradient(135deg,#fff5fa,#fff);
+}
+
+.hero-content{
+    max-width:1250px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.hero-title{
+    text-align:center;
+    font-size:clamp(30px,3vw,46px);
+    line-height:1.15;
+    font-weight:800;
+    color:#222;
+    margin-bottom:30px;
+}
+
+.hero-title span{
+    color:#e83e8c;
+}
+
+.search-box{
+    min-height:68px;
+    background:#fff;
+    border:1px solid #dcdcdc;
+    border-radius:6px;
+    display:grid;
+    grid-template-columns:2.1fr 1.35fr 1.05fr 190px;
+    overflow:hidden;
+    box-shadow:0 8px 28px rgba(0,0,0,.09);
+}
+
+.search-field{
+    min-height:68px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    border-right:1px solid #ddd;
+    gap:12px;
+    background:#fff;
+}
+
+.search-field.placeholder{
+    color:#777;
+    font-size:17px;
+}
+
+.search-field strong{
+    font-size:16px;
+    white-space:nowrap;
+}
+
+.field-icon{
+    font-size:21px;
+    color:#e83e8c;
+    flex-shrink:0;
+}
+
+.near-me{
+    margin-left:auto;
+    border:0;
+    border-radius:20px;
+    padding:9px 14px;
+    background:#fff1f7;
+    color:#d72e7d;
+    font-weight:700;
+    cursor:pointer;
+    white-space:nowrap;
+}
+
+.search-btn{
+    border:0;
+    background:#e83e8c;
+    color:#fff;
+    font-size:19px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.search-btn:hover{
+    background:#d92f7c;
+}
+
+/* Decorative shapes */
+
+.hero-decoration{
+    position:absolute;
+    bottom:0;
+    width:190px;
+    height:145px;
+    background:linear-gradient(160deg,#ffd6e8,#f58fbb);
+    border-radius:100px 100px 0 0;
+    opacity:.65;
+}
+
+.hero-decoration.left{
+    left:2%;
+}
+
+.hero-decoration.right{
+    right:2%;
+}
+
+/* =========================
+   PROMO SECTION
+========================= */
+
+.promo-section{
+    padding:58px 5% 80px;
+    background:#fff;
+}
+
+.promo-wrap{
+    max-width:1250px;
+    margin:auto;
+}
+
+.promo-card{
+    min-height:360px;
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    background:
+        linear-gradient(110deg,rgba(30,20,25,.94),rgba(30,20,25,.25)),
+        url("https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=85")
+        center/cover no-repeat;
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.promo-content{
+    padding:48px;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.service-badge{
+    width:max-content;
+    background:#fff;
+    color:#222;
+    border-radius:12px;
+    padding:12px 20px;
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+.promo-title{
+    font-size:clamp(34px,4vw,57px);
+    line-height:1.02;
+    font-weight:900;
+    margin-bottom:24px;
+}
+
+.promo-title span{
+    color:#ff72ad;
+}
+
+.promo-text{
+    font-size:16px;
+    color:#eee;
+    max-width:560px;
+    line-height:1.6;
+}
+
+.promo-features{
+    margin-top:25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.promo-feature{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.promo-side{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding:30px;
+}
+
+.promo-room{
+    width:min(100%,440px);
+    height:245px;
+    border-radius:18px 18px 0 0;
+    background:
+        url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85")
+        center/cover no-repeat;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+    .header-inner{
+        padding-left:20px;
+    }
+
+    .logo-box{
+        width:190px;
+    }
+
+    .header-item{
+        min-width:180px;
+        padding:0 15px;
+    }
+
+    .header-title{
+        font-size:15px;
+    }
+
+    .header-subtitle{
+        font-size:12px;
+    }
+}
+
+@media(max-width:950px){
+
+    .top-header{
+        height:auto;
+    }
+
+    .header-inner{
+        padding:0 20px;
+        flex-wrap:wrap;
+    }
+
+    .logo-box{
+        height:70px;
+    }
+
+    .header-item{
+        height:70px;
+    }
+
+    .header-right{
+        margin-left:0;
+    }
+
+    .search-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .search-btn{
+        min-height:68px;
+    }
+}
+
+@media(max-width:650px){
+
+    .header-inner{
+        padding:0 14px;
+    }
+
+    .logo-box{
+        width:100%;
+        height:62px;
+    }
+
+    .header-item,
+    .header-right{
+        display:none;
+    }
+
+    .hero{
+        padding:45px 14px 50px;
+    }
+
+    .hero-title{
+        font-size:28px;
+        line-height:1.2;
+        margin-bottom:24px;
+    }
+
+    .search-box{
+        grid-template-columns:1fr;
+        border-radius:12px;
+    }
+
+    .search-field{
+        min-height:58px;
+        border-right:0;
+        border-bottom:1px solid #ddd;
+    }
+
+    .search-field.placeholder{
+        font-size:15px;
+    }
+
+    .search-field strong{
+        font-size:15px;
+    }
+
+    .search-btn{
+        min-height:60px;
+    }
+
+    .hero-decoration{
+        display:none;
+    }
+
+    .promo-section{
+        padding:30px 14px 50px;
+    }
+
+    .promo-card{
+        grid-template-columns:1fr;
+        min-height:auto;
+    }
+
+    .promo-content{
+        padding:32px 25px;
+    }
+
+    .promo-title{
+        font-size:38px;
+    }
+
+    .promo-side{
+        padding:0 20px 20px;
+    }
+
+    .promo-room{
+        height:190px;
+    }
+
+    .promo-features{
+        gap:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="top-header">
+    <div class="header-inner">
+
+        <div class="logo-box">
+            <div class="logo">Manisha Hotels</div>
+        </div>
+
+        <div class="header-item">
+            <div class="header-icon">♕</div>
+            <div>
+                <div class="header-title">Premium Stay</div>
+                <div class="header-subtitle">Comfort made for you</div>
+            </div>
+        </div>
+
+        <div class="header-item">
+            <div class="header-icon">▣</div>
+            <div>
+                <div class="header-title">Best Rooms</div>
+                <div class="header-subtitle">Comfort & quality guaranteed</div>
+            </div>
+        </div>
+
+        <div class="header-item">
+            <div class="header-icon">⌂</div>
+            <div>
+                <div class="header-title">Our Hotel</div>
+                <div class="header-subtitle">A stay worth remembering</div>
+            </div>
+        </div>
+
+        <div class="header-item">
+            <div class="header-icon">☎</div>
+            <div>
+                <div class="header-title">8318757942</div>
+                <div class="header-subtitle">Call us to book now</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+
+            <div class="header-item language">
+                <div class="header-icon">◎</div>
+                <div class="header-title">English ▼</div>
+            </div>
+
+            <div class="header-item login">
+                <div class="login-icon">●</div>
+                <div class="header-title">Login / Signup</div>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-decoration left"></div>
+    <div class="hero-decoration right"></div>
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">
+            <span>Experience a More Refined Stay</span><br>
+            at Manisha Hotels
+        </h1>
+
+        <div class="search-box">
+
+            <div class="search-field placeholder">
+                <span class="field-icon">⌖</span>
+                <span>Search your stay</span>
+
+                <button class="near-me">
+                    ◎ Hotel location
+                </button>
+            </div>
+
+            <div class="search-field">
+                <span class="field-icon">▣</span>
+                <strong>Check-in &nbsp; – &nbsp; Check-out</strong>
+            </div>
+
+            <div class="search-field">
+                <span class="field-icon">♙</span>
+                <strong>1 Room, 1 Guest</strong>
+            </div>
+
+            <button class="search-btn">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PREMIUM HOTEL BANNER
+========================= -->
+
+<section class="promo-section">
+
+    <div class="promo-wrap">
+
+        <div class="promo-card">
+
+            <div class="promo-content">
+
+                <div class="service-badge">
+                    ✦ Manisha Hotels
+                </div>
+
+                <h2 class="promo-title">
+                    Stay better.<br>
+                    <span>Feel at home.</span>
+                </h2>
+
+                <p class="promo-text">
+                    Enjoy a comfortable and memorable stay with thoughtfully
+                    designed rooms, warm hospitality and everything you need
+                    for a relaxing experience.
+                </p>
+
+                <div class="promo-features">
+
+                    <div class="promo-feature">
+                        ▤ Clean Rooms
+                    </div>
+
+                    <div class="promo-feature">
+                        ♧ Helpful Staff
+                    </div>
+
+                    <div class="promo-feature">
+                        ❄ AC Rooms
+                    </div>
+
+                    <div class="promo-feature">
+                        ⌁ Free Wi-Fi
+                    </div>
+
+                    <div class="promo-feature">
+                        ✦ Toiletries
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="promo-side">
+                <div class="promo-room"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
